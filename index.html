@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./public/styles/style.css" />
+    <title>Share Tech</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar has-background-grey-dark is-flex-direction-column p-4">
+        <section class="navbar-menu">
+          <a class="navbar-item has-text-warning" href="/"> Home </a>
+          <a class="navbar-item has-text-warning" href="/dashboard">
+            Dashboard
+          </a>
+          <a class="navbar-item has-text-warning" href="/login"> Login </a>
+          <a class="navbar-item has-text-warning" href="logout"> logout </a>
+        </section>
+        <section
+          class="navbar-menu has-background-warning section-title is-justify-content-center"
+        >
+          <h1 class="has-text-grey-dark title">The Tech Blog</h1>
+        </section>
+      </nav>
+    </header>
+    <main class="is-flex">
+      <form class="login-form is-hidden">
+        <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Email" />
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input" type="password" placeholder="Password" />
+          </p>
+        </div>
+        <section class="is-flex">
+          <div class="field mr-2">
+            <p class="control">
+              <button class="button is-dark has-text-warning">Login</button>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control">
+              <a class="button is-dark has-text-warning" href="/signup">
+                Or SignUp instead!
+              </a>
+            </p>
+          </div>
+        </section>
+      </form>
+
+      <form class="login-form is-hidden">
+        <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="login" placeholder="Login" />
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Email" />
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input" type="password" placeholder="Password" />
+          </p>
+        </div>
+        <section class="is-flex">
+          <div class="field mr-2">
+            <p class="control">
+              <a class="button is-dark has-text-warning" href="/dashboard"
+                >SignUp</a
+              >
+            </p>
+          </div>
+          <div class="field">
+            <p class="control">
+              <a class="button is-dark has-text-warning" href="/login">
+                Or Login instead!
+              </a>
+            </p>
+          </div>
+        </section>
+      </form>
+
+      <ul class="is-hidden">
+        <li class="box has-background-grey-dark">
+          <a class="columns is-flex is-flex-direction-row" href="/edit/1">
+            <section class="column has-background-grey-dark has-text-warning">
+              Test post
+            </section>
+            <section
+              class="column has-background-grey-dark has-text-warning is-1 m-0 has-text-right"
+            >
+              2/6/2023
+            </section>
+          </a>
+        </li>
+      </ul>
+
+      <form class="box p-0 pb-1 form-edit has-background-grey-dark is-hidden">
+        <section
+          class="form-top has-background-dark p-3 has-text-warning has-text-centered is-flex is-flex-direction-column has-content-vcentered"
+        >
+          <h2 class="is-size-3 has-text-weight-semibold">Edit Post</h2>
+        </section>
+        <div class="field ml-2 mr-2">
+          <label class="label has-text-warning">Title</label>
+          <div class="control">
+            <input
+              class="input"
+              type="title"
+              placeholder="Please enter your post title"
+            />
+          </div>
+        </div>
+
+        <div class="field ml-2 mr-2">
+          <label class="label has-text-warning">Content</label>
+          <div class="control">
+            <textarea
+              class="textarea"
+              placeholder="Please add your post content here ..."
+            ></textarea>
+          </div>
+        </div>
+        <div class="field pt-2 ml-1 mr-1">
+          <div class="control is-flex is-flex-direction-column">
+            <button
+              class="button is-dark has-text-warning btn-edit"
+              type="submit"
+            >
+              Update
+            </button>
+            <button class="btn-edit button is-dark has-text-warning">
+              Delete
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <form class="box p-0 pb-1 form-create has-background-grey-dark is-hidden">
+        <section
+          class="form-top has-background-dark p-3 has-text-warning has-text-centered is-flex is-flex-direction-column has-content-vcentered"
+        >
+          <h2 class="is-size-3 has-text-weight-semibold">Create New Post</h2>
+        </section>
+        <div class="field ml-2 mr-2">
+          <label class="label has-text-warning">Title</label>
+          <div class="control">
+            <input
+              class="input"
+              type="title"
+              placeholder="Please enter your post title"
+            />
+          </div>
+        </div>
+
+        <div class="field ml-2 mr-2">
+          <label class="label has-text-warning">Content</label>
+          <div class="control">
+            <textarea
+              class="textarea"
+              placeholder="Please add your post content here ..."
+            ></textarea>
+          </div>
+        </div>
+        <div class="field pt-2 ml-1 mr-1">
+          <div class="control is-flex is-flex-direction-column">
+            <button
+              class="button is-dark has-text-warning btn-edit"
+              type="submit"
+            >
+              Create
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <ul class="">
+        <li class="box has-background-grey-dark p-0">
+          <section class="columns is-flex is-flex-direction-row m-2">
+            <section class="column has-background-grey-dark has-text-warning">
+              <a
+                class="has-text-warning has-text-weight-semibold"
+                href="/post/1"
+                >Test post</a
+              >
+            </section>
+            <section
+              class="column has-background-grey-dark has-text-warning is-2 m-0 has-text-right"
+            >
+              Posted by TEST on 2/6/2023
+            </section>
+          </section>
+          <section class="post-con has-text-warning p-2">
+            <p class="ml-2 has-text-grey-dark">Post</p>
+          </section>
+        </li>
+
+        <li class="box has-background-grey-dark p-0">
+          <section
+            class="columns is-flex is-flex-direction-row m-2 p-5"
+          ></section>
+          <section class="post-con has-text-warning p-2">
+            <section class="m-2">
+              <p class="ml-2 has-text-grey-dark">Some comment</p>
+              <p class="ml-2 has-text-grey-dark">- test001, 2/6/2023</p>
+            </section>
+            <section class="m-2">
+              <p class="ml-2 has-text-grey-dark">Some comment</p>
+              <p class="ml-2 has-text-grey-dark">- test001, 2/6/2023</p>
+            </section>
+          </section>
+        </li>
+
+        <form class="box p-0 pb-1 form-create has-background-grey-dark">
+          <section
+            class="form-top has-background-dark p-3 has-text-warning has-text-centered is-flex is-flex-direction-column has-content-vcentered p-5"
+          ></section>
+
+          <div class="field ml-2 mr-2">
+            <label class="label has-text-warning">Content</label>
+            <div class="control">
+              <textarea
+                class="textarea"
+                placeholder="Please add your post content here ..."
+              ></textarea>
+            </div>
+          </div>
+          <div class="field pt-2 ml-1 mr-1">
+            <div class="control is-flex is-flex-direction-column">
+              <button
+                class="button is-dark has-text-warning btn-edit"
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </ul>
+
+      <a class="button has-background-grey-dark has-text-warning" href="/new">
+        + New post
+      </a>
+    </main>
+    <footer></footer>
+  </body>
+</html>
