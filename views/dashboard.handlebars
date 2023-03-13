@@ -1,0 +1,16 @@
+<ul class="home-ul">
+  {{#each posts as |post|}}
+    <li class="box has-background-grey-dark">
+      <a class="columns is-flex is-flex-direction-row" href="/edit/1">
+        <section class="column has-background-grey-dark has-text-warning">
+          {{post.title}}
+        </section>
+        <section
+          class="column has-background-grey-dark has-text-warning is-1 m-0 has-text-right"
+        >
+          {{post.date_created}}
+        </section>
+      </a>
+    </li>
+  {{/each}}
+</ul>

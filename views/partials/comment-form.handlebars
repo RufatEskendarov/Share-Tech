@@ -1,0 +1,10 @@
+<section class="columns is-flex is-flex-direction-row m-2 p-5"></section>
+<section class="post-con has-text-warning p-2">
+  {{#each this}}
+    <section class="m-2">
+      <p class="ml-2 has-text-grey-dark">{{content}}</p>
+      <p class="ml-2 has-text-grey-dark">- {{user_id}}, {{commented_on}}</p>
+    </section>
+  {{/each}}
+
+</section>

@@ -1,0 +1,26 @@
+<ul class="home-ul">
+  {{#each posts as |post|}}
+    <li class="box has-background-grey-dark p-0">
+      <section class="columns is-flex is-flex-direction-row m-2">
+        <section class="column has-background-grey-dark has-text-warning">
+          <a
+            class="has-text-warning has-text-weight-semibold"
+            href="/post/1"
+          >{{post.title}}</a>
+        </section>
+        <section
+          class="column has-background-grey-dark has-text-warning is-2 m-0 has-text-right"
+        >
+          Posted by
+          {{post.user.login}}
+          on
+          {{post.date_created}}
+        </section>
+      </section>
+      <section class="post-con has-text-warning p-2">
+        <p class="ml-2 has-text-grey-dark">{{post.content}}</p>
+      </section>
+    </li>
+
+  {{/each}}
+</ul>

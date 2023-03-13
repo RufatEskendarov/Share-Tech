@@ -1,3 +1,6 @@
+html {
+  background-color: rgb(145, 145, 145);
+}
 body {
   height: 100vh;
   width: 100vw;
@@ -26,12 +29,18 @@ nav {
 }
 .login-form {
   border: 2px solid rgb(73, 73, 73);
+
   width: 60vw;
+  height: auto
 
   border-radius: 0.5rem;
   padding: 0.5rem;
   position: absolute;
   top: 42%;
+  left: 20vw;
+}
+.home-ul {
+  margin-left: 4rem;
 }
 
 .textarea,
@@ -50,8 +59,8 @@ nav {
 
 .button {
   border: none;
-  position: absolute;
-  bottom: 12px;
+
+ 
 }
 
 .form-top {

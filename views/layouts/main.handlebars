@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <title>Share Tech</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar has-background-grey-dark is-flex-direction-column p-4">
+        <section class="navbar-menu">
+          <a class="navbar-item has-text-warning" href="/"> Home </a>
+          <a class="navbar-item has-text-warning" href="/dashboard">
+            Dashboard
+          </a>
+          {{#unless logged_in}}
+            <a class="navbar-item has-text-warning" href="/login"> Login </a>
+          {{/unless}}
+
+          <a class="navbar-item has-text-warning" href="logout"> logout </a>
+        </section>
+        <section
+          class="navbar-menu has-background-warning section-title is-justify-content-center"
+        >
+          <h1 class="has-text-grey-dark title">The Tech Blog</h1>
+        </section>
+      </nav>
+    </header>
+    <main class="is-flex is-flex-direction-column">
+      {{{body}}}
+    </main>
+    <footer></footer>
+  </body>
+</html>
