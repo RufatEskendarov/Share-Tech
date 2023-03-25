@@ -10,23 +10,24 @@ User.hasMany(Post, {
 
 Post.belongsTo(User, {
   foreignKey: "user_id",
+  onDelete: "CASCADE",
 });
 //____________________________________________
+User.hasMany(Comments, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
+
+Post.hasMany(Comments, {
+  foreignKey: "post_id",
+  onDelete: "CASCADE",
+});
 
 Comments.belongsTo(User, {
   foreignKey: "user_id",
   as: "user_name",
 });
-User.hasMany(Comments, {
-  foreignKey: "user_id",
-});
-
 Comments.belongsTo(Post, {
-  foreignKey: "post_id",
-  as: "post_title",
-});
-
-Post.hasMany(Comments, {
   foreignKey: "post_id",
 });
 

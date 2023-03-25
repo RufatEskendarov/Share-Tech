@@ -35,10 +35,6 @@ User.init(
         len: [8],
       },
     },
-    logged_in: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
-    },
   },
   {
     hooks: {

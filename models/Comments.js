@@ -15,7 +15,6 @@ Comments.init(
       references: {
         model: "post",
         key: "id",
-        unique: false,
       },
     },
     user_id: {
@@ -23,7 +22,6 @@ Comments.init(
       references: {
         model: "user",
         key: "id",
-        unique: false,
       },
     },
     content: {
