@@ -1,24 +1,27 @@
-<form class="login-form">
+<form id="sign-up" class="login-form">
   <div class="field">
     <p class="control has-icons-left has-icons-right">
-      <input class="input" type="login" placeholder="Login" />
+      <input id="login" class="input" type="login" placeholder="Login" />
     </p>
   </div>
   <div class="field">
     <p class="control has-icons-left has-icons-right">
-      <input class="input" type="email" placeholder="Email" />
+      <input id="s-email" class="input" type="email" placeholder="Email" />
     </p>
   </div>
 
   <div class="field">
     <p class="control has-icons-left">
-      <input class="input" type="password" placeholder="Password" />
+      <input id="s-pass" class="input" type="password" placeholder="Password" />
     </p>
   </div>
   <section class="is-flex">
     <div class="field mr-2">
       <p class="control">
-        <a class="button is-dark has-text-warning" href="/dashboard">SignUp</a>
+        <button
+          type="submit"
+          class="button is-dark has-text-warning"
+        >SignUp</button>
       </p>
     </div>
     <div class="field">
@@ -30,3 +33,4 @@
     </div>
   </section>
 </form>
+<script src="/js/signUp.js"></script>
