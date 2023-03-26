@@ -15,14 +15,18 @@
       <nav class="navbar has-background-grey-dark is-flex-direction-column p-4">
         <section class="navbar-menu">
           <a class="navbar-item has-text-warning" href="/"> Home </a>
-          <a class="navbar-item has-text-warning" href="/dashboard">
-            Dashboard
-          </a>
-          {{#unless logged_in}}
-            <a class="navbar-item has-text-warning" href="/login"> Login </a>
-          {{/unless}}
+          {{#if logged_in}}
+            <a class="navbar-item has-text-warning" href="/dashboard">
+              Dashboard
+            </a>
+            <a id="log-out" class="navbar-item has-text-warning">
+              Logout
+            </a>
+          {{else}}
 
-          <a class="navbar-item has-text-warning" href="logout"> logout </a>
+            <a class="navbar-item has-text-warning" href="/login"> Login </a>
+          {{/if}}
+
         </section>
         <section
           class="navbar-menu has-background-warning section-title is-justify-content-center"
@@ -35,5 +39,10 @@
       {{{body}}}
     </main>
     <footer></footer>
+
   </body>
+
+  {{#if logged_in}}
+    <script src="/js/logOut.js"></script>
+  {{/if}}
 </html>
