@@ -1,0 +1,60 @@
+<ul class="ml-6">
+  <li class="box has-background-grey-dark p-0">
+    <section class="columns is-flex is-flex-direction-row m-2">
+      <section class="column has-background-grey-dark has-text-warning">
+        <a
+          class="has-text-warning has-text-weight-semibold"
+          href="/post/{{post.id}}"
+        >{{post.title}}</a>
+      </section>
+      <section
+        class="column has-background-grey-dark has-text-warning is-2 m-0 has-text-right"
+      >
+        Posted by
+        {{post.user.login}}
+        on
+        {{post.date_created}}
+      </section>
+    </section>
+    <section class="post-con has-text-warning p-2">
+      <p class="ml-2 has-text-grey-dark">{{post.content}}</p>
+    </section>
+  </li>
+
+  {{#if post.comments}}
+
+  <li class="box has-background-grey-dark p-0">
+    {{>comment-form post.comments}}
+
+  </li>
+  {{/if}}
+
+  <form
+    id="comment-form"
+    class="box p-0 pb-1 form-create has-background-grey-dark"
+  >
+    <section
+      class="form-top has-background-dark p-3 has-text-warning has-text-centered is-flex is-flex-direction-column has-content-vcentered p-5"
+    ></section>
+
+    <div class="field ml-2 mr-2">
+      <label class="label has-text-warning">Comment</label>
+      <div class="control">
+        <textarea
+          id="comment-content"
+          class="textarea"
+          placeholder="Please add your post content here ..."
+        ></textarea>
+      </div>
+    </div>
+    <div class="field pt-2 ml-1 mr-1">
+      <div class="control is-flex is-flex-direction-column">
+        <button class="button is-dark has-text-warning btn-edit" type="submit">
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</ul>
+
+<script src="/js/commentPost.js"></script>

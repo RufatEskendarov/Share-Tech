@@ -33,7 +33,6 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
-    console.log(posts);
 
     // Pass serialized data and session flag into template
     res.render("dashboard", {
@@ -105,6 +104,35 @@ router.get("/edit/:id", withAuth, async (req, res) => {
     }
   } catch (err) {
     res.redirect("login");
+  }
+});
+
+router.get("/post/:id", withAuth, async (req, res) => {
+  try {
+    // what should we pass here? we need to get some data passed via the request body (something.something.id?)
+    // change the model below, but not the findByPk method. - DONE!
+    const postData = await Post.findOne({
+      // helping you out with the include here, no changes necessary
+      where: { id: req.params.id },
+      include: [
+        User,
+
+        {
+          model: Comments,
+          include: [User],
+        },
+      ],
+    });
+
+    if (postData) {
+      const post = postData.get({ plain: true });
+
+      res.render("aimed-post", { post, logged_in: req.session.logged_in });
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
