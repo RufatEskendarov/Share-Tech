@@ -36,6 +36,26 @@ router.delete("/:id", withAuth, async (req, res) => {
   }
 });
 
+// UPDATE POST
+router.put("/:id", withAuth, async (req, res) => {
+  try {
+    console.log("here is the req.body", req.body);
+    const [affectedRows] = await Post.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (affectedRows > 0) {
+      res.status(200).end();
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get("/", async (req, res) => {
   try {
     // Get all projects and JOIN with user data

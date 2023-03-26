@@ -1,0 +1,47 @@
+<form
+  id="post-edit"
+  class="box ml-6 p-0 pb-1 form-edit has-background-grey-dark"
+>
+  <section
+    class="form-top has-background-dark p-3 has-text-warning has-text-centered is-flex is-flex-direction-column has-content-vcentered"
+  >
+    <h2 class="is-size-3 has-text-weight-semibold">Edit Post</h2>
+  </section>
+  <div class="field ml-2 mr-2">
+    <label class="label has-text-warning">Title</label>
+    <div class="control">
+      <input
+        id="edit-title"
+        class="input"
+        type="title"
+        placeholder="Please enter your post title"
+      />
+    </div>
+  </div>
+
+  <div class="field ml-2 mr-2">
+    <label class="label has-text-warning">Content</label>
+    <div class="control">
+      <textarea
+        id="edit-content"
+        class="textarea"
+        placeholder="Please add your post content here ..."
+      ></textarea>
+    </div>
+  </div>
+  <div class="field pt-2 ml-1 mr-1">
+    <div class="control is-flex is-flex-direction-column">
+      <button class="button is-dark has-text-warning btn-edit" type="submit">
+        Update
+      </button>
+      <button
+        id="btn-post-delete"
+        class="btn-edit button is-dark has-text-warning"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</form>
+
+<script src="/js/editPost.js"></script>
