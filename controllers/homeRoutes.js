@@ -27,7 +27,9 @@ router.get("/", async (req, res) => {
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const postData = await Post.findAll({});
+    const postData = await Post.findAll({
+      where: { user_id: req.session.user_id },
+    });
 
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
@@ -84,6 +86,10 @@ router.get("/dashboard", async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+router.get("/dashboard/new", withAuth, (req, res) => {
+  res.render("new-post", { logged_in: req.session.logged_in });
 });
 
 module.exports = router;

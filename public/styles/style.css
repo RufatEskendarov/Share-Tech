@@ -81,3 +81,14 @@ nav {
   border-radius: 0 0 5px 5px;
   border: 2px solid #4a4a4a;
 }
+
+.flex-footer {
+  position: absolute;
+  left: 47vw;
+  bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
