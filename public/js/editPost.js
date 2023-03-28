@@ -1,5 +1,13 @@
 const postId = window.location.pathname.split("/")[2];
 
+const deletePostHandler = async () => {
+  await fetch(`/api/post/${postId}`, {
+    method: "DELETE",
+  });
+
+  document.location.replace("/dashboard");
+};
+
 const editPostHandler = async (event) => {
   event.preventDefault();
 
@@ -20,22 +28,14 @@ const editPostHandler = async (event) => {
   if (response.ok) {
     document.location.replace("/dashboard");
   } else {
-    alert("Failed to update your post");
   }
   document.location.replace("/dashboard");
 };
 
-const deletePostHandler = async () => {
-  await fetch(`/api/post/${postId}`, {
-    method: "DELETE",
-  });
-
-  document.location.replace("/dashboard");
-};
-// WHY ONE BUTTON IS SUBMIT AND THE OTHER IS CLICK?
 document
-  .querySelector("#post-edit")
+  .getElementById("post-edit")
   .addEventListener("submit", editPostHandler);
+
 document
-  .querySelector("#btn-post-delete")
+  .getElementById("btn-post-delete")
   .addEventListener("click", deletePostHandler);

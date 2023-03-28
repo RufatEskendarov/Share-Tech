@@ -91,4 +91,10 @@ nav {
   justify-content: center;
 }
 
+#btn-post-delete{
+  position: relative;
+  margin: 3px;
+  background-color: #363636;
+  border-color: transparent;
+}
 

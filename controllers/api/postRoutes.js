@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Post, User, Comments } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+//Create new post
 router.post("/", withAuth, async (req, res) => {
   try {
     const newPost = await Post.create({
@@ -16,6 +17,7 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
+//Delete post
 router.delete("/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.destroy({
@@ -36,7 +38,7 @@ router.delete("/:id", withAuth, async (req, res) => {
   }
 });
 
-// UPDATE POST
+// Update post
 router.put("/:id", withAuth, async (req, res) => {
   try {
     console.log("here is the req.body", req.body);
@@ -66,14 +68,12 @@ router.get("/", async (req, res) => {
         {
           model: Comments,
           include: [User],
-          //attributes: ["login"],
         },
       ],
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
     res.status(200).json({
       posts,
       logged_in: req.session.logged_in,
@@ -86,10 +86,8 @@ router.get("/", async (req, res) => {
 router.get("/:id", withAuth, async (req, res) => {
   try {
     console.log(req.params.id);
-    // what should we pass here? we need to get some data passed via the request body (something.something.id?)
-    // change the model below, but not the findByPk method. - DONE!
+
     const postData = await Post.findOne({
-      // helping you out with the include here, no changes necessary
       where: { id: req.params.id },
       include: [
         User,
@@ -101,9 +99,8 @@ router.get("/:id", withAuth, async (req, res) => {
     });
 
     if (postData) {
-      // serialize the data
       const post = postData.get({ plain: true });
-      // which view should we render for a single-post? - DONE!
+
       console.log(post);
       res.status(200).json(post);
     } else {
@@ -114,26 +111,4 @@ router.get("/:id", withAuth, async (req, res) => {
   }
 });
 
-// router.get("/post/:id", async (req, res) => {
-//   try {
-//     // what should we pass here? we need to get some data passed via the request body (something.something.id?)
-//     // change the model below, but not the findByPk method. - DONE!
-//     const postData = await Post.findOne({
-//       // helping you out with the include here, no changes necessary
-//       where: { id: req.params.id },
-//     });
-
-//     if (postData) {
-//       // serialize the data
-//       const post = postData.get({ plain: true });
-//       // which view should we render for a single-post? - DONE!
-//       console.log(post);
-//       res.status(200).json(post);
-//     } else {
-//       res.status(404).end();
-//     }
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 module.exports = router;
