@@ -56,14 +56,13 @@ CMS-style blog site similar to a Wordpress site, where developers can publish th
   THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 
 ## Installation
-
-Just instal NPM package run in terminal "npm install"
+1. In the file .env.EXAMPLE remove "EXAMPLE" part and keep file name as .env, overwrite variables to connect to your databaseю
+2. Just instal NPM package run in terminal "npm install"
+3. Then you need to seed your data base, run in terminal  "node .\seeds\seeds.js"
 
 ## Usage
 
 After NPM installation type in terminal "node .\server.js"
-
-[How it works](https://github.com/RufatEskendarov/Tech-Blog)
 
 ## Tests
 
@@ -89,7 +88,9 @@ This project is covered under the MIT license. To learn more about what this mea
 
 ## Deployment
 
-[GitHub Repo](https://github.com/RufatEskendarov/Employee_Traker)
+[GitHub Repo](https://github.com/RufatEskendarov/Share-Tech)
+
+[Heroku app URL](https://share-tech.herokuapp.com/)
 
 ## Contribution
 
